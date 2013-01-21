@@ -145,7 +145,7 @@
         }
 
         /* Force initial check if images should appear. */
-        $(window).load(function() {
+        $(function() {
             update();
         });
         
