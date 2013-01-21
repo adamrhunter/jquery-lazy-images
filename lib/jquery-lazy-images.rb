@@ -5,7 +5,7 @@ module Jquery
         class_attribute(name)
         self.send(:"#{name}=", value)
       end
-      configure :default_image, 'someimage.gif'
+      configure :default_image, 'grey.gif'
     end
   end
 end
