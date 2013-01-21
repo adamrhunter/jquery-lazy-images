@@ -1,5 +1,12 @@
 module Jquery
   module LazyImages
+    class Options
+      def self.configure(name, value = nil)
+        class_attribute(name)
+        self.send(:"#{name}=", value)
+      end
+      configure :default_image, 'someimage.gif'
+    end
   end
 end
 

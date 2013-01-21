@@ -1,6 +1,12 @@
+# Initializer Support
+Jquery::LazyImages::Options.default_image = 'default_image_name'
+
+
 # jquery-lazy-images
 
 jQuery plugin for lazy-loading of images. Why download what you can't see?
+
+Updated to 1.8.2
 
 ## Installation
 
