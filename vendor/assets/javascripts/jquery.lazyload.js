@@ -1,7 +1,7 @@
 /*
  * Lazy Load - jQuery plugin for lazy loading images
  *
- * Copyright (c) 2007-2012 Mika Tuupola
+ * Copyright (c) 2007-2013 Mika Tuupola
  *
  * Licensed under the MIT license:
  *   http://www.opensource.org/licenses/mit-license.php
@@ -9,7 +9,7 @@
  * Project home:
  *   http://www.appelsiini.net/projects/lazyload
  *
- * Version:  1.8.2
+ * Version:  1.8.4
  *
  */
 (function($, window, document, undefined) {
@@ -32,7 +32,7 @@
 
         function update() {
             var counter = 0;
-
+      
             elements.each(function() {
                 var $this = $(this);
                 if (settings.skip_invisible && !$this.is(":visible")) {
@@ -58,11 +58,11 @@
         if(options) {
             /* Maintain BC for a couple of versions. */
             if (undefined !== options.failurelimit) {
-                options.failure_limit = options.failurelimit;
+                options.failure_limit = options.failurelimit; 
                 delete options.failurelimit;
             }
             if (undefined !== options.effectspeed) {
-                options.effect_speed = options.effectspeed;
+                options.effect_speed = options.effectspeed; 
                 delete options.effectspeed;
             }
 
@@ -131,7 +131,7 @@
         $window.bind("resize", function(event) {
             update();
         });
-
+              
         /* With IOS5 force loading images when navigating with back button. */
         /* Non optimal workaround. */
         if ((/iphone|ipod|ipad.*os 5/gi).test(navigator.appVersion)) {
@@ -145,10 +145,10 @@
         }
 
         /* Force initial check if images should appear. */
-        $(document).ready(function() {
+        $(window).load(function() {
             update();
         });
-
+        
         return this;
     };
 
@@ -157,7 +157,7 @@
 
     $.belowthefold = function(element, settings) {
         var fold;
-
+        
         if (settings.container === undefined || settings.container === window) {
             fold = $window.height() + $window.scrollTop();
         } else {
@@ -166,7 +166,7 @@
 
         return fold <= $(element).offset().top - settings.threshold;
     };
-
+    
     $.rightoffold = function(element, settings) {
         var fold;
 
@@ -178,10 +178,10 @@
 
         return fold <= $(element).offset().left - settings.threshold;
     };
-
+        
     $.abovethetop = function(element, settings) {
         var fold;
-
+        
         if (settings.container === undefined || settings.container === window) {
             fold = $window.scrollTop();
         } else {
@@ -190,10 +190,10 @@
 
         return fold >= $(element).offset().top + settings.threshold  + $(element).height();
     };
-
+    
     $.leftofbegin = function(element, settings) {
         var fold;
-
+        
         if (settings.container === undefined || settings.container === window) {
             fold = $window.scrollLeft();
         } else {
