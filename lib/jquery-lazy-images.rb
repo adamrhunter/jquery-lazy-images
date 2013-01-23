@@ -6,6 +6,7 @@ module Jquery
         self.send(:"#{name}=", value)
       end
       configure :default_image, 'grey.gif'
+      configure :no_script, false
     end
   end
 end

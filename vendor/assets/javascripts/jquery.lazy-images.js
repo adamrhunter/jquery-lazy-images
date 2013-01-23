@@ -1,5 +1,7 @@
 //=require jquery.lazyload
 
 $(function() {
-  $("img.lazy").show().lazyload();
+	$list = $("img.lazy");//.show().lazyload();
+	console.log(">>>>>>image length is:" + $list.length);	
+	$("img.lazy").show().lazyload();
 });
